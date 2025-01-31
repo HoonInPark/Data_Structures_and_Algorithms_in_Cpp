@@ -70,10 +70,9 @@ bool Array::Add(const Elem &_InElem)
         if (Data[Size - 1].GetValue() > _InElem.GetValue())
             return false;
         else
-        {
             nWhereToStartPush--;
-        }
     }
+    else Size++;
 
     /*
     먼저 어디에 넣을지를 찾아야 한다.
@@ -83,7 +82,7 @@ bool Array::Add(const Elem &_InElem)
     int IdxToInsert = 0;
 
 #pragma region general case
-    for (int i = Size - 1; i > -1; i--)
+    for (int i = Size - 2; i > -1; i--)
     {
         if (Data[i].GetValue() > _InElem.GetValue())
         {
@@ -97,7 +96,6 @@ bool Array::Add(const Elem &_InElem)
         Data[i + 1] = Data[i];
 
     Data[IdxToInsert] = _InElem;
-    Size++;
 
     return true;
 }
@@ -112,7 +110,7 @@ bool Array::Remove(int _Idx)
 
 int main()
 {
-    Array arr(3);
+    Array arr(10);
     arr.Add(Elem("A", 100));
     arr.Add(Elem("B", 10));
     arr.Add(Elem("C", 1000));
