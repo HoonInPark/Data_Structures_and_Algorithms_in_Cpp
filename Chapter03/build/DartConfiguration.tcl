@@ -14,7 +14,7 @@ CostDataFile:
 Site: Changjoonui-MacBookPro.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-clang++
+BuildName: Darwin-g++-14
 
 # Subprojects
 LabelsForSubprojects: 
@@ -63,8 +63,8 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-CompilerVersion: 16.0.0.16000026
+Compiler: /opt/homebrew/Cellar/gcc/14.2.0_1/bin/g++-14
+CompilerVersion: 14.2.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

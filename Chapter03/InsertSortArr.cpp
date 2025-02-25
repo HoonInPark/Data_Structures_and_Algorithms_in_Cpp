@@ -16,7 +16,7 @@ public:
 
 private:
     void Sort();
- 
+
 private:
     int* Data;
 
