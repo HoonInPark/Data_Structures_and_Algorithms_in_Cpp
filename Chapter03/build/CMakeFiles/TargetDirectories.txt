@@ -1,4 +1,6 @@
 /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/Array.dir
+/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/InsertSortArr.dir
+/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/Tic_Tac_Toe.dir
 /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/Experimental.dir
 /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/Nightly.dir
 /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles/Continuous.dir

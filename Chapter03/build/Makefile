@@ -140,6 +140,19 @@ Array/fast:
 .PHONY : Array/fast
 
 #=============================================================================
+# Target rules for targets named InsertSortArr
+
+# Build rule for target.
+InsertSortArr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 InsertSortArr
+.PHONY : InsertSortArr
+
+# fast build rule for target.
+InsertSortArr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/build
+.PHONY : InsertSortArr/fast
+
+#=============================================================================
 # Target rules for targets named Experimental
 
 # Build rule for target.
@@ -527,6 +540,30 @@ Array.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Array.dir/build.make CMakeFiles/Array.dir/Array.cpp.s
 .PHONY : Array.cpp.s
 
+InsertSortArr.o: InsertSortArr.cpp.o
+.PHONY : InsertSortArr.o
+
+# target to build an object file
+InsertSortArr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/InsertSortArr.cpp.o
+.PHONY : InsertSortArr.cpp.o
+
+InsertSortArr.i: InsertSortArr.cpp.i
+.PHONY : InsertSortArr.i
+
+# target to preprocess a source file
+InsertSortArr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/InsertSortArr.cpp.i
+.PHONY : InsertSortArr.cpp.i
+
+InsertSortArr.s: InsertSortArr.cpp.s
+.PHONY : InsertSortArr.s
+
+# target to generate assembly for a file
+InsertSortArr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/InsertSortArr.cpp.s
+.PHONY : InsertSortArr.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -565,9 +602,13 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... Array"
+	@echo "... InsertSortArr"
 	@echo "... Array.o"
 	@echo "... Array.i"
 	@echo "... Array.s"
+	@echo "... InsertSortArr.o"
+	@echo "... InsertSortArr.i"
+	@echo "... InsertSortArr.s"
 .PHONY : help
 
 

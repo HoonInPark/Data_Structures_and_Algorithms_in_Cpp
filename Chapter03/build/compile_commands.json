@@ -4,5 +4,11 @@
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o CMakeFiles/Array.dir/Array.cpp.o -c /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/Array.cpp",
   "file": "/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/Array.cpp",
   "output": "CMakeFiles/Array.dir/Array.cpp.o"
+},
+{
+  "directory": "/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o CMakeFiles/InsertSortArr.dir/InsertSortArr.cpp.o -c /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/InsertSortArr.cpp",
+  "file": "/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/InsertSortArr.cpp",
+  "output": "CMakeFiles/InsertSortArr.dir/InsertSortArr.cpp.o"
 }
 ]

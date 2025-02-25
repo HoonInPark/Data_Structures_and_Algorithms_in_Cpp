@@ -102,8 +102,15 @@ bool Array::Add(const Elem &_InElem)
 
 bool Array::Remove(int _Idx)
 {
-
-
+    try
+    {
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     return false;
 }
 #pragma endregion Array

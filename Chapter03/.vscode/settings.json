@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "algorithm": "cpp",
+        "cmath": "cpp",
+        "vector": "cpp",
+        "__config": "cpp"
+    }
+}

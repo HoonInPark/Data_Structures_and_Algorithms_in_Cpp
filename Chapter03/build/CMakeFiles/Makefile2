@@ -64,10 +64,12 @@ CMAKE_BINARY_DIR = /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorit
 
 # The main recursive "all" target.
 all: CMakeFiles/Array.dir/all
+all: CMakeFiles/InsertSortArr.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/Array.dir/codegen
+codegen: CMakeFiles/InsertSortArr.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,6 +78,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Array.dir/clean
+clean: CMakeFiles/InsertSortArr.dir/clean
 clean: CMakeFiles/Experimental.dir/clean
 clean: CMakeFiles/Nightly.dir/clean
 clean: CMakeFiles/Continuous.dir/clean
@@ -137,6 +140,38 @@ CMakeFiles/Array.dir/codegen:
 CMakeFiles/Array.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Array.dir/build.make CMakeFiles/Array.dir/clean
 .PHONY : CMakeFiles/Array.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/InsertSortArr.dir
+
+# All Build rule for target.
+CMakeFiles/InsertSortArr.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles --progress-num=3,4 "Built target InsertSortArr"
+.PHONY : CMakeFiles/InsertSortArr.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/InsertSortArr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/InsertSortArr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles 0
+.PHONY : CMakeFiles/InsertSortArr.dir/rule
+
+# Convenience name for target.
+InsertSortArr: CMakeFiles/InsertSortArr.dir/rule
+.PHONY : InsertSortArr
+
+# codegen rule for target.
+CMakeFiles/InsertSortArr.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/changjoonlee/Documents/Cpp/Data_Structures_and_Algorithms_in_Cpp/Chapter03/build/CMakeFiles --progress-num=3,4 "Finished codegen for target InsertSortArr"
+.PHONY : CMakeFiles/InsertSortArr.dir/codegen
+
+# clean rule for target.
+CMakeFiles/InsertSortArr.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InsertSortArr.dir/build.make CMakeFiles/InsertSortArr.dir/clean
+.PHONY : CMakeFiles/InsertSortArr.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Experimental.dir
