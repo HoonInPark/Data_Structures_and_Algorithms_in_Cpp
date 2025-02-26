@@ -28,13 +28,27 @@ public:
 
             return true;
         }
+        else if (!m_pBack) // m_pFront는 nullptr이 아닌데 m_pBack가 nullptr인 경우
+        {
+            _pInNode->m_pNext = m_pFront;
+            m_pFront->m_pNext = _pInNode;
+
+            m_pBack = m_pFront;
+            m_pFront = _pInNode;
+
+            m_pCursor = m_pBack;
+            
+            return true;
+        }
         else
         {
-            
+            _pInNode->m_pNext = m_pFront;
+            m_pBack->m_pNext = _pInNode;
+            m_pFront = _pInNode;
 
             return true;
         }
-
+        
         return false;
     }
 
