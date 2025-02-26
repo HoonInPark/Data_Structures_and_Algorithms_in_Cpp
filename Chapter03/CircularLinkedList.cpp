@@ -1,3 +1,5 @@
+#define CURSOR_USED_AS_SEARCH_PT 0
+
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -21,6 +23,7 @@ class CircularList
 {
 public:
     bool Add(Node* _pInNode)
+#if CURSOR_USED_AS_SEARCH_PT
     {
         if (!m_pFront)
         {
@@ -51,6 +54,19 @@ public:
         
         return false;
     }
+#else
+    {
+        if (!m_pCursor)
+        {
+            
+        }
+        else
+        {
+            
+        }
+        
+    }
+#endif
 
     void PrintNode(Node* _pInNode) { cout << _pInNode->m_Elem << endl; }
 
