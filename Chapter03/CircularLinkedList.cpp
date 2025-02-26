@@ -24,15 +24,17 @@ public:
     {
         if (!m_pFront)
         {
-            
+            m_pFront = _pInNode;
 
             return true;
         }
         else
         {
+            
+
             return true;
         }
-        
+
         return false;
     }
 
@@ -50,16 +52,17 @@ private:
 
 int main()
 {
-    CircularList* CircularLinkedListGen;
+    CircularList CircularListGen;
+    
     for (int i = 0; i < 100; i++)
     {
-        CircularLinkedListGen->Add(new Node(i));
+        CircularListGen.Add(new Node(i));
     }
 
-    Node* NodeTmp = CircularLinkedListGen->GetCursor();
+    Node* NodeTmp = CircularListGen.GetCursor();
     for (int i = 0; i < 200; i++)
     {
-        CircularLinkedListGen->PrintNode(NodeTmp);
-        NodeTmp = CircularLinkedListGen->GetNextNode(NodeTmp);
+        CircularListGen.PrintNode(NodeTmp);
+        NodeTmp = CircularListGen.GetNextNode(NodeTmp);
     }
 }
