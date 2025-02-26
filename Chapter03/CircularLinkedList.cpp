@@ -1,4 +1,4 @@
-#define CURSOR_USED_AS_SEARCH_PT 0
+#define CURSOR_USED_ONLY_AS_SEARCH_PT 0
 
 #include "bits/stdc++.h"
 using namespace std;
@@ -23,7 +23,7 @@ class CircularList
 {
 public:
     bool Add(Node* _pInNode)
-#if CURSOR_USED_AS_SEARCH_PT
+#if CURSOR_USED_ONLY_AS_SEARCH_PT
     {
         if (!m_pFront)
         {
@@ -58,13 +58,20 @@ public:
     {
         if (!m_pCursor)
         {
-            
+            _pInNode->m_pNext = _pInNode;
+            m_pCursor = _pInNode;
+
+            return true;
         }
         else
         {
+            _pInNode->m_pNext = m_pCursor->m_pNext;
+            m_pCursor->m_pNext = _pInNode;
             
+            return true;
         }
         
+        return false;
     }
 #endif
 
@@ -74,8 +81,10 @@ public:
     inline Node* GetCursor() { return m_pCursor; }
 
 private:
+#if CURSOR_USED_ONLY_AS_SEARCH_PT
     Node* m_pFront{nullptr};
     Node* m_pBack{nullptr};
+#endif
 
     Node* m_pCursor{nullptr};
 };
