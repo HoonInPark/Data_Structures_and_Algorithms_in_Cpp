@@ -75,5 +75,5 @@ crashlytics-build.properties
 fabric.properties
 
 *.DS_Store
-/build/
-/cmake-build-debug/
+build/
+cmake-build-debug/
