@@ -1,28 +1,34 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-int DrawTickElem(int _InMajorTickLen)
+void InsertTickElem(vector<int>& _InTicks, int _InOffsetIdx, int _InMajorTickLen)
 {
-    
 
-    return 0;
 }
 
-void EnglishRuler(int _InMajorTickNum, int _InMajorTickLen)
+void EnglishRuler(int _InMajorTickLen)
 {
-    for (int i = 0; i < _InMajorTickNum; i++)
+    vector<int> Ticks;
+    const int&& TicksSize = pow(2, _InMajorTickLen - 1) + 1;
+    Ticks.reserve(TicksSize);
+
+    InsertTickElem(Ticks, 0, _InMajorTickLen);
+    
+    for (int i = 0; i < TicksSize; i++)
     {
-        DrawTickElem(_InMajorTickLen);
+        for (int i = 0; i < Ticks[i]; i++)
+        {
+            cout << '-';
+        }
+        
+        cout << '\n' << endl;
     }
 }
 
 int main()
 {
-    int nMajorTickNum;
-    cin >> nMajorTickNum;
-    int nMajorTickLen;
-    cin >> nMajorTickLen;
+    int nInput;
+    cin >> nInput;
     
-    // nMajorTickNum개의 nMajorTickLen만큼의 길이를 갖는 MajorTick이 생긴다.
-    EnglishRuler(nMajorTickNum, nMajorTickLen);
+    EnglishRuler(nInput);
 }
