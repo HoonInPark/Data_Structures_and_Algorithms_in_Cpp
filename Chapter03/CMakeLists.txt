@@ -5,7 +5,7 @@ add_executable(Array Array.cpp)
 add_executable(InsertSortArr InsertSortArr.cpp)
 add_executable(Tic_Tac_Toe Tic_Tac_Toe.cpp)
 add_executable(CircularLinkedList CircularLinkedList.cpp)
-add_executable(vEnglichRuler EnglichRuler.cpp)
+add_executable(EnglishRuler EnglishRuler.cpp)
 
 include(CTest)
 enable_testing()
