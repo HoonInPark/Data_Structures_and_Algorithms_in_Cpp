@@ -70,6 +70,10 @@
         "unordered_set": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "span": "cpp",
+        "any": "cpp",
+        "ranges": "cpp",
+        "stacktrace": "cpp"
     }
 }
