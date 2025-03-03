@@ -74,6 +74,8 @@
         "span": "cpp",
         "any": "cpp",
         "ranges": "cpp",
-        "stacktrace": "cpp"
+        "stacktrace": "cpp",
+        "chrono": "cpp",
+        "format": "cpp"
     }
 }
