@@ -1,15 +1,19 @@
-#include "bits/stdc++.h"
 #include "DoublyLinkedList.h"
 using namespace std;
 
-void InsertTickElem(DoublyLinkedList<int>& _InTicks, int _InMajorTickLen, _List_iterator<int> _InIter)
+void InsertTickElem(DoublyLinkedList<int>& _InTicks, int _InMajorTickLen, Node<int>* _pInNode)
 {
 
 }
 
 void EnglishRuler(int _InMajorTickLen)
 {
+    auto pTicks = new DoublyLinkedList<int>();
 
+    pTicks->PushBack(_InMajorTickLen);
+    InsertTickElem(*pTicks, _InMajorTickLen, pTicks->PushBack(_InMajorTickLen));
+
+    delete pTicks;
 }
 
 int main()
