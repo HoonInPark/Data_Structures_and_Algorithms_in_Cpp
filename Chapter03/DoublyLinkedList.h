@@ -38,11 +38,7 @@ public:
         Node<T>* _pOutNext = nullptr);
 #endif // activate if it needed
 
-    void InsertAfter(
-        Node<T>* _pInNext,
-        const T& _InElem,
-        Node<T>* _pOutPrev = nullptr,
-        Node<T>* _pOutNext = nullptr);
+    Node<T>* Insert(Node<T>* _pInNode, const T& _InElem);
 
 private:
     Node<T>* m_pHeader;
@@ -82,9 +78,11 @@ DoublyLinkedList<T>::~DoublyLinkedList()
 {
     Node<T>* pNodeTmp = m_pHeader;
 
-    while (pNodeTmp)
+    for (;;)
     {
         pNodeTmp = pNodeTmp->m_pNext;
+        
+        if (!pNodeTmp) return;
         delete pNodeTmp->m_pPrev;
     }
 }
@@ -112,18 +110,14 @@ void DoublyLinkedList<T>::InsertBefore(
 #endif
 
 template <typename T>
-void DoublyLinkedList<T>::InsertAfter(
-    Node<T>* _pInNext,
-    const T& _InElem,
-    Node<T>* _pOutPrev,
-    Node<T>* _pOutNext)
+Node<T>* DoublyLinkedList<T>::Insert(Node<T>* _pInNode, const T& _InElem)
 {
-    if (!_pInNext) return;
+    if (!_pInNode) return nullptr;
 
-    Node<T>* pNewNode = new Node<T>(_InElem, _pInNext->m_pPrev, _pInNext);
-    _pOutPrev = pNewNode->m_pPrev;
-    _pOutNext = pNewNode->m_pNext;
+    Node<T>* pNewNode = new Node<T>(_InElem, _pInNode->m_pPrev, _pInNode);
 
     pNewNode->m_pPrev->m_pNext = pNewNode;
     pNewNode->m_pNext->m_pPrev = pNewNode;
+
+    return pNewNode;
 }
