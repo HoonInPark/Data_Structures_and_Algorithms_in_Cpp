@@ -13,7 +13,6 @@ EnglishRuler.cpp)
 
 add_executable(BinarySum BinarySum.cpp)
 add_executable(LinFib LinFib.cpp)
-add_executable(MQueenProblem MQueenProblem.cpp)
 
 include(CTest)
 enable_testing()
