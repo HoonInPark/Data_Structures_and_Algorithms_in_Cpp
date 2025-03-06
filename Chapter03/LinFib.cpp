@@ -1,7 +1,6 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-
 void WithoutRecursion(int _InFibIdx)
 {
     int Former = 0;
@@ -19,12 +18,12 @@ void WithoutRecursion(int _InFibIdx)
 }
 
 // 선형재귀로 피보나치 구현하기
-int LinFib(int _InIdx, int _InFormer = 0, int _InLater = 1)
+int LinFib(int _InIdx, int _InFormer = 0, int _InLater = 1) // I'm fuckin' brilliant
 {
     if (_InIdx < 1)
         return _InFormer + _InLater;
 
-    return LinFib(_InIdx - 1, _InLater, _InFormer + _InLater);
+    return LinFib(_InIdx - 1, _InLater, _InFormer + _InLater); // 꼬리재귀는 재귀를 안쓰고 구현 가능
 }
 
 int main()
