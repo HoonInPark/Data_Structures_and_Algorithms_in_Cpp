@@ -16,8 +16,6 @@ void EnglishRuler(int _InMajorTickLen)
     pTicks->PushBack(_InMajorTickLen);
     InsertTickElem(*pTicks, _InMajorTickLen, pTicks->PushBack(_InMajorTickLen));
 
-    
-
     delete pTicks;
 }
 

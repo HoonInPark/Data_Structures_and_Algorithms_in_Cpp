@@ -11,6 +11,9 @@ DoublyLinkedList.h
 DoublyLinkedList.cpp
 EnglishRuler.cpp)
 
+add_executable(BinarySum BinarySum.cpp)
+add_executable(LinFib LinFib.cpp)
+
 include(CTest)
 enable_testing()
 
