@@ -7,10 +7,11 @@ void WithoutRecursion(int _InFibIdx)
     int Former = 0;
     int Later = 1;
 
-    for (int i = 0; i < _InFibIdx + 1; i++)
+    int NumTmp;
+    for (int i = 0; i < _InFibIdx - 1; i++)
     {
-        int NumTmp = Later;
-        Later = Former + Later;
+        NumTmp = Later;
+        Later += Former;
         Former = NumTmp;
     }
 
@@ -18,14 +19,20 @@ void WithoutRecursion(int _InFibIdx)
 }
 
 // 선형재귀로 피보나치 구현하기
-int LinFib(int _InFibIdx)
+int LinFib(int _InFormer, int _InLater, int _InIdx)
 {
-    if (_InFibIdx < 2) return 1;
+    if (_InIdx < 1)
+        return _InFormer + _InLater;
 
-    
+    return LinFib(_InLater, _InFormer + _InLater, _InIdx - 1);
 }
 
 int main()
 {
-    WithoutRecursion(5);
+    // WithoutRecursion(8);
+
+    int Former = 0;
+    int Later = 1;
+
+    cout << LinFib(0, 1, 4) << endl;
 }
