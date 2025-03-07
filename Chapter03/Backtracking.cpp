@@ -1,13 +1,33 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-/// @brief print all the cases consist of k num of chars which are elem of U
-/// @param k 
-/// @param S string arr that buffers chars from U
-/// @param U 
 void PuzzleSolve(int k, vector<int>& S, unordered_set<int>& U)
 {
-    
+    if (k == 0)
+    {
+        // 길이가 원하는 만큼 되면 결과 출력
+        cout << "Solution found: ";
+
+        for (int num : S)
+            cout << num << " ";
+
+        cout << endl;
+
+        return;
+    }
+
+    unordered_set<int> U_Buffer(U);
+
+    for (auto& e : U)
+    {
+        U_Buffer.erase(e);   // 사용한 원소 제거
+        S.push_back(e); // 원소 추가
+
+        PuzzleSolve(k - 1, S, U_Buffer); // 재귀 호출
+
+        S.pop_back(); // 백트래킹: 원소 제거
+        U_Buffer.insert(e);  // 다시 사용 가능하도록 복구
+    }
 }
 
 int main()
