@@ -16,6 +16,8 @@ void PuzzleSolve(int k, vector<int>& S, unordered_set<int>& U)
         return;
     }
 
+    // 인수로 들어온 U는 첫번째 depth에선 4, 그 다음은 3, 2, 1개가 된다. 
+    // 각 depth에서는 거기서 하나씩 빼고 string 배열을 나타내는 S에 대입
     unordered_set<int> U_Buffer(U);
 
     for (auto& e : U)
