@@ -50,8 +50,9 @@ bool CircularQueue<T>::Enqueue(const T& _InElem)
     if (m_ArrCap <= m_Arrsize)
         return false;
 
-
+    m_CirArr[m_IdxBack % m_ArrCap] = _InElem;
     m_IdxBack++;
+
     return true;
 }
 
@@ -59,8 +60,8 @@ template<typename T>
 bool CircularQueue<T>::Dequeue()
 {
     if (m_Arrsize < 1) return false;
-    
-    //
+
+    m_CirArr[m_IdxFront % m_IdxFront] = T();
     m_IdxFront++;
     return true;
 }
