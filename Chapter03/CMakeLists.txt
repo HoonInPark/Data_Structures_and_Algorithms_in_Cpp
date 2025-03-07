@@ -14,6 +14,7 @@ EnglishRuler.cpp)
 add_executable(BinarySum BinarySum.cpp)
 add_executable(LinFib LinFib.cpp)
 add_executable(Backtracking Backtracking.cpp)
+add_executable(CircularQueue CircularQueue.cpp)
 
 include(CTest)
 enable_testing()
