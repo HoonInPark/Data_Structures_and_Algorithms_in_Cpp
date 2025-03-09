@@ -43,7 +43,7 @@ public:
             if (auto pElem = m_CirArr[i])
                 cout << *m_CirArr[i] << ' ';
             else
-                cout << '-' << ' ';
+                cout << "- ";
         }
     }
 
@@ -79,8 +79,9 @@ bool CircularQueue<T>::Dequeue()
     m_ArrSize--;
 
     delete m_CirArr[m_IdxFront % m_ArrCap];
-    m_CirArr[m_IdxFront % m_IdxFront] = nullptr;
+    m_CirArr[m_IdxFront % m_ArrCap] = nullptr;
     m_IdxFront++;
+
     return true;
 }
 
