@@ -5,7 +5,7 @@ using namespace std;
 
 typedef int Elem;
 
-class CircularList;
+class CirList;
 
 class Node
 {
@@ -16,10 +16,10 @@ private:
     Elem m_Elem;
     Node* m_pNext{nullptr};
 
-    friend CircularList;
+    friend CirList;
 };
 
-class CircularList
+class CirList
 {
 public:
     bool Add(Node* _pInNode)
@@ -91,17 +91,17 @@ private:
 
 int main()
 {
-    CircularList CircularListGen;
+    CirList CirListGen;
     
     for (int i = 0; i < 100; i++)
     {
-        CircularListGen.Add(new Node(i));
+        CirListGen.Add(new Node(i));
     }
 
-    Node* NodeTmp = CircularListGen.GetCursor();
+    Node* NodeTmp = CirListGen.GetCursor();
     for (int i = 0; i < 200; i++)
     {
-        CircularListGen.PrintNode(NodeTmp);
-        NodeTmp = CircularListGen.GetNextNode(NodeTmp);
+        CirListGen.PrintNode(NodeTmp);
+        NodeTmp = CirListGen.GetNextNode(NodeTmp);
     }
 }
