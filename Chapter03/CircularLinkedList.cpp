@@ -23,20 +23,38 @@ private:
 class CirList
 {
 public:
-    bool Add(Node* _pInNode)
+    CirList() {}
+    ~CirList()
     {
+        Node* pNodeFormerTmp = m_pCursor;
+        Node* pNodeLaterTmp;
+        
+        while (pNodeFormerTmp)
+        {
+            pNodeLaterTmp = pNodeFormerTmp->m_pNext;
+            delete pNodeFormerTmp;
+            
+            pNodeFormerTmp = pNodeLaterTmp;
+        }
+    }
+
+    bool Add(const Elem& _InElem)
+    {
+        auto pNodeGen = new Node(_InElem);
+
         if (!m_pCursor)
         {
-            _pInNode->m_pNext = _pInNode;
-            m_pCursor = _pInNode;
+            pNodeGen->m_pNext = pNodeGen;
+            m_pCursor = pNodeGen;
 
             return true;
         }
         else
         {
-            _pInNode->m_pNext = m_pCursor->m_pNext;
-            m_pCursor->m_pNext = _pInNode;
-            
+            pNodeGen->m_pNext = m_pCursor->m_pNext;
+            m_pCursor->m_pNext = pNodeGen;
+            m_pCursor = pNodeGen;
+
             return true;
         }
     }
@@ -52,19 +70,21 @@ private:
 
 int main()
 {
-    CirList CirListGen;
+    auto pCirListGen = new CirList();
     
     for (int i = 0; i < 100; i++)
     {
-        CirListGen.Add(new Node(i));
+        pCirListGen->Add(i);
     }
 
-    Node* NodeTmp = CirListGen.GetCursor();
+    Node* NodeTmp = pCirListGen->GetCursor();
     for (int i = 0; i < 200; i++)
     {
-        CirListGen.PrintNode(NodeTmp);
-        NodeTmp = CirListGen.GetNextNode(NodeTmp);
+        pCirListGen->PrintNode(NodeTmp);
+        NodeTmp = pCirListGen->GetNextNode(NodeTmp);
     }
+
+    delete pCirListGen;
 }
 
 /* 
