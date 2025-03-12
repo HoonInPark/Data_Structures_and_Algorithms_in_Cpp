@@ -3,20 +3,22 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+template<typename T>
 class CirList;
 
 template<typename T>
 class Node
 {
 public:
-    Node(const T& _InElem) : m_Elem(_InElem) {}
+    Node(const T& _InElem);
 
 private:
     T m_Elem;
 
     Node* m_pNext{ nullptr };
 
-    friend CirList;
+    template<typename U>
+    friend class CirList;
 };
 
 template<typename T>
@@ -62,7 +64,14 @@ int main()
  * 이것은 언제나 back을 가리키고, 이것 뒤에 front가 있어야 하나?
  * advance가 일어나면 이 관계는 유지한 채로 front외 back이 가리키는 노드가 바뀌나?
  * front외 back은 그냥 cursor를 기준으로 앞 뒤를 부르는 이름이고, 따로 포인터를 저장하거나 하지는 않는다.
-*/
+ */
+
+template<typename T>
+Node<T>::Node(const T& _InElem)
+    : m_Elem(_InElem)
+{
+
+}
 
 template<typename T>
 CirList<T>::CirList()
