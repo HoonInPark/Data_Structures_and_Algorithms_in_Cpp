@@ -18,7 +18,7 @@ public:
 
     inline int GetSize() const { return m_Size; }
     inline int GetCap() const { return m_Cap; }
-    inline T& operator[](int _InIdx) { return *m_arrData[_InIdx]; }
+    inline T& operator[](int _InIdx) { return m_arrData[_InIdx]; }
 
     bool Reserve(int _InCap);
 
@@ -26,7 +26,7 @@ public:
     bool Remove(int _InIdx);
 
 private:
-    T** m_arrData;
+    T* m_arrData;
 
     const int m_Cap;
     int m_Size{ 0 };
@@ -36,10 +36,10 @@ template <typename T>
 inline VecNotCopy<T>::VecNotCopy(int _InInitCap)
     : m_Cap(_InInitCap)
 {
-    m_arrData = new T * [_InInitCap];
+    m_arrData = new T[_InInitCap];
 
     for (auto& Elem : m_arrData)
-        Elem = nullptr;
+        Elem = T();
 }
 
 template<typename T>
@@ -55,8 +55,7 @@ inline VecNotCopy<T>::~VecNotCopy()
 template<typename T>
 inline bool VecNotCopy<T>::Reserve(int _InCap)
 {
-    if (_InCap)
-        return false;
+    return false;
 }
 
 template <typename T>
