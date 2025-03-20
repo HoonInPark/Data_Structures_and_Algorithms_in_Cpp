@@ -76,6 +76,10 @@
         "ranges": "cpp",
         "stacktrace": "cpp",
         "chrono": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "random": "cpp",
+        "version": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp"
     }
 }
