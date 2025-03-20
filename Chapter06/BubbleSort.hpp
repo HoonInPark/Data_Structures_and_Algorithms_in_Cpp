@@ -75,12 +75,17 @@ Sequence<T>::~Sequence()
 }
 
 template<typename T>
-inline void Sequence<T>::BubbleSort()
+void Sequence<T>::BubbleSort()
 {
+    
 }
 
 template<typename T>
-inline void Sequence<T>::SeqViewer()
+void Sequence<T>::SeqViewer()
 {
+    for (int i = 0; i < m_Size; i++)
+    {
+        cout << m_arrData[i].m_Data << " , ";
+    }
 }
 
