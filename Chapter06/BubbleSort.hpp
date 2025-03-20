@@ -12,7 +12,7 @@ template<typename T>
 struct Elem
 {
 public:
-    Elem(Elem* _pInPrev = nullptr, Elem* _pInNext = nullptr, const T& _InData = T());
+    Elem(const T& _InData = T());
     ~Elem();
 
 private:
@@ -22,14 +22,12 @@ private:
 
     template<typename U>
     friend class Sequence;
-    
+
 };
 
 template<typename T>
-Elem<T>::Elem(Elem* _pInPrev, Elem* _pInNext, const T& _InData)
-    : m_pPrev(_pInPrev),
-    m_pNext(_pInNext),
-    m_Data(_InData)
+Elem<T>::Elem(const T& _InData)
+    : m_Data(_InData)
 {
 }
 
@@ -45,20 +43,44 @@ public:
     Sequence(int _InArrCap = 20);
     ~Sequence();
 
+    void BubbleSort();
+    void SeqViewer();
+
 private:
     Elem<T>* m_arrData;
+
+    int m_Cap;
+    int m_Size;
 };
 
 template<typename T>
 Sequence<T>::Sequence(int _InArrCap)
 {
-    m_arrData = new Elem<T>(_InArrCap);
+    m_arrData = new Elem<T>[_InArrCap];
+    m_Cap = _InArrCap;
 
+    if (_InArrCap < 2) return;
+
+    for (int i = 1; i < _InArrCap; i++)
+    {
+        m_arrData[i - 1].m_pNext = &m_arrData[i];
+        m_arrData[i].m_pPrev = &m_arrData[i - 1];
+    }
 }
 
 template<typename T>
 Sequence<T>::~Sequence()
 {
     delete[] m_arrData;
+}
+
+template<typename T>
+inline void Sequence<T>::BubbleSort()
+{
+}
+
+template<typename T>
+inline void Sequence<T>::SeqViewer()
+{
 }
 
