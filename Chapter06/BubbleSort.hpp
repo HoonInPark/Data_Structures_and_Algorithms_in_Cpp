@@ -12,11 +12,11 @@ template<typename T>
 struct Elem
 {
 public:
-    Elem(const T& _InData = T());
+    Elem(T* _pInData = nullptr);
     ~Elem();
 
 private:
-    T m_Data;
+    T* m_pData;
     Elem* m_pPrev;
     Elem* m_pNext;
 
@@ -26,8 +26,8 @@ private:
 };
 
 template<typename T>
-Elem<T>::Elem(const T& _InData)
-    : m_Data(_InData)
+Elem<T>::Elem(T* _pInData)
+    : m_pData(_pInData)
 {
 }
 
@@ -43,7 +43,7 @@ public:
     Sequence(int _InArrCap = 20);
     ~Sequence();
 
-    bool PushBack(const T& _InData);
+    bool PushBack(T* _pInData);
 
     void BubbleSort();
     void SeqViewer();
@@ -81,9 +81,9 @@ Sequence<T>::~Sequence()
 }
 
 template<typename T>
-bool Sequence<T>::PushBack(const T& _InData)
+bool Sequence<T>::PushBack(T* _pInData)
 {
-    m_arrData[m_Size].m_Data = _InData;
+    m_arrData[m_Size].m_pData = _pInData;
     m_Size++;
 
     return true;
@@ -101,9 +101,23 @@ void Sequence<T>::BubbleSort()
 template<typename T>
 bool Sequence<T>::BubbleSortPass()
 {
-    
+    bool bIsSortDone = true;
+    T* pTmpData;
 
-    return false;
+    for (int i = 1; i < m_Size; i++)
+    {
+        if (*m_arrData[i - 1].m_pData > *m_arrData[i].m_pData)
+        {
+            bIsSortDone = false;
+
+        }
+        else
+        {
+            
+        }
+    }
+
+    return bIsSortDone;
 }
 
 template<typename T>
@@ -111,6 +125,6 @@ void Sequence<T>::SeqViewer()
 {
     for (int i = 0; i < m_Size; i++)
     {
-        cout << m_arrData[i].m_Data << " , ";
+        cout << *m_arrData[i].m_pData << " , ";
     }    
-}    
+}
