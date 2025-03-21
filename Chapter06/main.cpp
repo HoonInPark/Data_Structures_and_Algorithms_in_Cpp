@@ -13,7 +13,7 @@ int main()
     SeqTest->SeqViewer();
     SeqTest->BubbleSort();
 
-    cout << "==================================" << endl;
+    cout << '\n' << "==================================" << endl;
     SeqTest->SeqViewer();
 
     delete SeqTest;

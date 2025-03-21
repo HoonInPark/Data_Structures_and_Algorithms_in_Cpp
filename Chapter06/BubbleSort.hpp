@@ -94,7 +94,7 @@ void Sequence<T>::BubbleSort()
 {
     for (;;)
     {
-        if (!BubbleSortPass()) return;
+        if (BubbleSortPass()) return;
     }
 }
 
@@ -110,10 +110,9 @@ bool Sequence<T>::BubbleSortPass()
         {
             bIsSortDone = false;
 
-        }
-        else
-        {
-            
+            pTmpData = m_arrData[i - 1].m_pData;
+            m_arrData[i - 1].m_pData = m_arrData[i].m_pData;
+            m_arrData[i].m_pData = pTmpData;
         }
     }
 
@@ -125,6 +124,6 @@ void Sequence<T>::SeqViewer()
 {
     for (int i = 0; i < m_Size; i++)
     {
-        cout << *m_arrData[i].m_pData << " , ";
+        cout << *m_arrData[i].m_pData << ", ";
     }    
 }
