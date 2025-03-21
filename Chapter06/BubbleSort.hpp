@@ -43,6 +43,8 @@ public:
     Sequence(int _InArrCap = 20);
     ~Sequence();
 
+    bool PushBack(const T& _InData);
+
     void BubbleSort();
     void SeqViewer();
 
@@ -58,6 +60,7 @@ Sequence<T>::Sequence(int _InArrCap)
 {
     m_arrData = new Elem<T>[_InArrCap];
     m_Cap = _InArrCap;
+    m_Size = 0;
 
     if (_InArrCap < 2) return;
 
@@ -75,9 +78,18 @@ Sequence<T>::~Sequence()
 }
 
 template<typename T>
+bool Sequence<T>::PushBack(const T& _InData)
+{
+    m_arrData[m_Size].m_Data = _InData;
+    m_Size++;
+
+    return true;
+}
+
+template<typename T>
 void Sequence<T>::BubbleSort()
 {
-    
+
 }
 
 template<typename T>
