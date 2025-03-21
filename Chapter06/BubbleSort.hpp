@@ -125,5 +125,5 @@ void Sequence<T>::SeqViewer()
     for (int i = 0; i < m_Size; i++)
     {
         cout << *m_arrData[i].m_pData << ", ";
-    }    
+    }
 }
