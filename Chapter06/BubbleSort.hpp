@@ -49,6 +49,9 @@ public:
     void SeqViewer();
 
 private:
+    bool BubbleSortPass();
+
+private:
     Elem<T>* m_arrData;
 
     int m_Cap;
@@ -89,8 +92,20 @@ bool Sequence<T>::PushBack(const T& _InData)
 template<typename T>
 void Sequence<T>::BubbleSort()
 {
-
+    for (;;)
+    {
+        if (!BubbleSortPass()) return;
+    }
 }
+
+template<typename T>
+bool Sequence<T>::BubbleSortPass()
+{
+    
+
+    return false;
+}
+
 
 template<typename T>
 void Sequence<T>::SeqViewer()
@@ -98,6 +113,5 @@ void Sequence<T>::SeqViewer()
     for (int i = 0; i < m_Size; i++)
     {
         cout << m_arrData[i].m_Data << " , ";
-    }
-}
-
+    }    
+}    
