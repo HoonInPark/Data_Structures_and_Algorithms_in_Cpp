@@ -106,7 +106,6 @@ bool Sequence<T>::BubbleSortPass()
     return false;
 }
 
-
 template<typename T>
 void Sequence<T>::SeqViewer()
 {
