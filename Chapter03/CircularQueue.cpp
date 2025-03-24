@@ -48,6 +48,8 @@ public:
     }
 
 private:
+    // each elem of this arr can be marked as null, 
+    // not as T() which is default val of type T
     T** m_CirArr;
 
     int m_ArrCap;
